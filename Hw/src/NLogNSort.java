@@ -10,4 +10,8 @@ public class NLogNSort {
         MergeSort(data, M+1, R);
         Merge(data, L, M, R);
     }
+    public static void Merge(int[] data, int L, int M, int R) {
+        int Left[] = new int[M - L + 1];
+        int Right[]= new int[R - M];
+    }
 }
