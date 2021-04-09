@@ -41,4 +41,9 @@ public class NLogNSort {
             }
         }
     }
+    public void sort(int[] data)
+    {
+        MergeSort(data, 0, data.length-1);
+    }
+
 }
