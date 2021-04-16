@@ -14,27 +14,26 @@ import org.junit.jupiter.api.Test;
         public void Min_findsMinOfTree_minEquals1() {
             binaryTree tree = new binaryTree();
 
-            tree.insert( "33");
-            tree.insert( "23");
-            tree.insert( "1");
-            tree.insert( "53");
+            tree.insert( "a");
+            tree.insert( "ab");
+            tree.insert( "c");
+            tree.insert( "aaa");
 
 
-            assertEquals("1", tree.Min(tree.root));
+            assertEquals("a", tree.Min(tree.root));
         }
 
         @Test
         public void maxValue_findsMaxOfTree_minEquals1() {
             binaryTree tree = new binaryTree();
 
-            tree.insert( "5");
-            tree.insert( "2");
-            tree.insert( "3");
-            tree.insert( "7");
-            tree.insert( "34");
+            tree.insert( "aaa");
+            tree.insert( "aab");
+            tree.insert( "abb");
+            tree.insert( "abc");
 
 
-            assertEquals("34", tree.Max(tree.root));
+            assertEquals("abc", tree.Max(tree.root));
         }
     }
 
