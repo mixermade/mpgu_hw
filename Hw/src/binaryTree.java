@@ -17,3 +17,20 @@ public class binaryTree {
         return SearchRec (key, root.right);
     return SearchRec (key, root.left);
     }
+
+    public String Min(BSTitem root)  {
+        String minimum = root.key;
+        while (root.left != null)  {
+            minimum = root.left.key;
+            root = root.left;
+        }
+        return minimum;
+    }
+
+    public String Max(BSTitem root)  {
+        String maximum = root.key;
+        while (root.right != null)  {
+            maximum = root.right.key;
+            root = root.right;
+        }
+        return maximum;
