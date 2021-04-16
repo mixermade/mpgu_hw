@@ -48,7 +48,19 @@ import org.junit.jupiter.api.Test;
             assertEquals("2cd", tree.getSucc(tree.root, "1bc").key);
         }
         @Test
-        public void de2lete_deletes8_searchFor10EqualsFalse() {
+        public void getPred_findsPredOf2cd_predEquals1bc() {
+            binaryTree tree = new binaryTree();
+
+            tree.insert( "1bc");
+            tree.insert( "2cd");
+            tree.insert( "ertgf");
+            tree.insert( "4gess");
+
+
+            assertEquals("1bc", tree.getPredShell(tree.root, "2cd").key);
+        }
+        @Test
+        public void de2lete_delete10_10NotFound() {
             binaryTree tree = new binaryTree();
 
             tree.insert( "3");
@@ -61,6 +73,7 @@ import org.junit.jupiter.api.Test;
 
             assertEquals(null, tree.search("10"));
         }
+
 
     }
 

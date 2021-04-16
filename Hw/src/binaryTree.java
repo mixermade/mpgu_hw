@@ -44,17 +44,12 @@ public class binaryTree {
         }
         return maximum;
     }
-
-
-    public String getPred(BSTitem root) {
-        if (root.left != null)
-            return Max(root.left);
-        String pred = root.p.key;
-        while (pred != null && root.key == root.p.left.key) {
-            root.key = pred;
-            pred = root.p.key;
-        }
-        return pred;
+    public static BSTitem MaxRoot(BSTitem root) {
+        if (root == null)
+            return null;
+        else if (root.right != null)
+            return MaxRoot(root.right);
+        return root;
     }
 
     public void insert(String key) {
@@ -140,5 +135,24 @@ public class binaryTree {
             return SearchRecRoot(key, root.right);
         return SearchRecRoot(key, root.left);
     }
-
+    public BSTitem getPredShell(BSTitem root, String key) {
+        return predecessorRec(root, key);
+    }
+    public BSTitem predecessorRec(BSTitem root, String key) {
+        BSTitem pre = null;
+        while (root != null) {
+            if (root.key.equals(key)) {
+                if (root.left != null) {
+                    pre = root.left;
+                    while (pre.right != null)
+                        pre = pre.right;
+                }
+                return pre;
+            } else if (key.compareTo(root.key) > 0) {
+                pre = root;
+                root = root.right;
+            }
+        }
+        return pre;
+    }
 }
