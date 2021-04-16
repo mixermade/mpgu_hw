@@ -1,18 +1,18 @@
 public class binaryTree {
-    private BSTitem root;
+    public BSTitem root;
 
     public binaryTree(){
         root = null;
     }
-    public BSTitem search (String key){
+    public String search (String key){
      return SearchRec (key, root);
     }
 
-    private static BSTitem SearchRec (String key, BSTitem root){
+    private static String SearchRec (String key, BSTitem root){
     if (root == null)
         return null;
     if (root.key.equals(key))
-        return root;
+        return root.key;
     if (root.key.compareTo(key) == -1)
         return SearchRec (key, root.right);
     return SearchRec (key, root.left);
@@ -25,6 +25,13 @@ public class binaryTree {
             root = root.left;
         }
         return minimum;
+    }
+    public static BSTitem MinRoot(BSTitem root) {
+        if (root == null)
+            return null;
+        else if (root.left != null)
+            return MinRoot(root.left);
+        return root;
     }
 
     public String Max(BSTitem root)  {
@@ -55,13 +62,61 @@ public class binaryTree {
         }
         return pred;
     }
-    public static BSTitem insert(BSTitem root, String x){
-        if (root == null)
-            return new BSTitem(x);
-        else if(root.key.compareTo(x) == -1)
-            root.right.key = x;
+    public void insert(String key)  {
+        root = insertRec(root, key);
+    }
+
+
+    public BSTitem insertRec(BSTitem root, String key) {
+        if (root == null) {
+            root = new BSTitem(key);
+            return root;
+        }
+
+
+        if (root.key.compareTo(key) == 1)
+            root.left = insertRec(root.left, key);
+        else if (root.key.compareTo(key) == -1)
+            root.right = insertRec(root.right, key);
+        return root;
+    }
+    public static BSTitem delete(BSTitem root, String x){
+
+        if(root==null)
+            return null;
+        if (root.key.compareTo(x) == -1)
+            root.setRightChild(delete(root.right, x));
+        else if(root.key.compareTo(x) == 1)
+            root.setLeftChild(delete(root.left, x));
         else
-            root.left.key = x;
+        {
+
+            if(root.left==null && root.right==null)
+            {
+                root = null;
+                return null;
+            }
+
+
+            else if(root.left==null || root.right==null)
+            {
+                BSTitem temp;
+                if(root.left==null)
+                    temp = root.right;
+                else
+                    temp = root.left;
+                root = null;
+                return temp;
+            }
+
+
+            else
+            {
+                BSTitem temp = MinRoot(root.right);
+                root.key = temp.key;
+                root.setRightChild(delete(root.right, temp.key));
+            }
+        }
         return root;
     }
 }
