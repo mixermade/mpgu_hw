@@ -34,3 +34,16 @@ public class binaryTree {
             root = root.right;
         }
         return maximum;
+    }
+    public String getSucc (BSTitem root) {
+        if (root.right != null)
+            return Min (root.right);
+        String succ = root.p.key;
+        while (succ != null && root.key == root.p.right.key) {
+            root.key = succ;
+            succ = root.p.key;
+        }
+        return succ;
+    }
+
+}
