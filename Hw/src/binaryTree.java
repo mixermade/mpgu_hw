@@ -55,4 +55,13 @@ public class binaryTree {
         }
         return pred;
     }
+    public static BSTitem insert(BSTitem root, String x){
+        if (root == null)
+            return new BSTitem(x);
+        else if(root.key.compareTo(x) == -1)
+            root.right.key = x;
+        else
+            root.left.key = x;
+        return root;
+    }
 }
