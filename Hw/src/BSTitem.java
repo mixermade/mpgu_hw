@@ -8,4 +8,12 @@ public class BSTitem {
         right = null;
         left = null;
     }
+    public void setRightChild(BSTitem n)
+    {
+        right = n;
+    }
+
+    public void setLeftChild(BSTitem n){
+        left = n;
+    }
 }
