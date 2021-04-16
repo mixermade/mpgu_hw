@@ -11,7 +11,7 @@ import org.junit.jupiter.api.Test;
         }
 
         @Test
-        public void Min_findsMinOfTree_minEquals1() {
+        public void Min_findsMinOfTree_returnsMin() {
             binaryTree tree = new binaryTree();
 
             tree.insert( "a");
@@ -24,7 +24,7 @@ import org.junit.jupiter.api.Test;
         }
 
         @Test
-        public void maxValue_findsMaxOfTree_minEquals1() {
+        public void Max_findsMaxOfTree_returnsMax() {
             binaryTree tree = new binaryTree();
 
             tree.insert( "aaa");
@@ -35,5 +35,19 @@ import org.junit.jupiter.api.Test;
 
             assertEquals("abc", tree.Max(tree.root));
         }
+        @Test
+        public void getSucc_findsSucOf1ab_sucEquals2bc() {
+            binaryTree tree = new binaryTree();
+
+            tree.insert( "1bc");
+            tree.insert( "2cd");
+            tree.insert( "ertgf");
+            tree.insert( "4gess");
+
+
+            assertEquals("2cd", tree.getSucc(tree.root, "1bc").key);
+        }
+
+
     }
 

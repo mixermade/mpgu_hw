@@ -7,6 +7,7 @@ public class BSTitem {
         this.key = key;
         right = null;
         left = null;
+        p = null;
     }
     public void setRightChild(BSTitem n)
     {
