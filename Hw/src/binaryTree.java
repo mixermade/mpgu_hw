@@ -45,5 +45,14 @@ public class binaryTree {
         }
         return succ;
     }
-
+    public String getPred (BSTitem root) {
+        if (root.left != null)
+            return Max (root.left);
+        String pred = root.p.key;
+        while (pred != null && root.key == root.p.left.key) {
+            root.key = pred;
+            pred = root.p.key;
+        }
+        return pred;
+    }
 }
