@@ -36,7 +36,7 @@ import org.junit.jupiter.api.Test;
             assertEquals("abc", tree.Max(tree.root));
         }
         @Test
-        public void getSucc_findsSucOf1ab_sucEquals2bc() {
+        public void getSucc_findsSucOf1bc_sucEquals2cd() {
             binaryTree tree = new binaryTree();
 
             tree.insert( "1bc");
@@ -47,7 +47,20 @@ import org.junit.jupiter.api.Test;
 
             assertEquals("2cd", tree.getSucc(tree.root, "1bc").key);
         }
+        @Test
+        public void de2lete_deletes8_searchFor10EqualsFalse() {
+            binaryTree tree = new binaryTree();
 
+            tree.insert( "3");
+            tree.insert( "2");
+            tree.insert( "1");
+            tree.insert( "10");
+            tree.insert( "4");
+            tree.de2lete("10");
+
+
+            assertEquals(null, tree.search("10"));
+        }
 
     }
 

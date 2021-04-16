@@ -14,7 +14,7 @@ public class binaryTree {
             return null;
         if (root.key.equals(key))
             return root.key;
-        if (root.key.compareTo(key) == -1)
+        if (root.key.compareTo(key) < 0)
             return SearchRec(key, root.right);
         return SearchRec(key, root.left);
     }
@@ -69,20 +69,24 @@ public class binaryTree {
         }
 
 
-        if (root.key.compareTo(key) == 1)
+        if (root.key.compareTo(key) > 0)
             root.left = insertRec(root.left, key);
-        else if (root.key.compareTo(key) == -1)
+        else if (root.key.compareTo(key) < 0)
             root.right = insertRec(root.right, key);
         return root;
+    }
+
+    public void de2lete (String key) {
+        root = delete (root,key);
     }
 
     public static BSTitem delete(BSTitem root, String x) {
 
         if (root == null)
             return null;
-        if (root.key.compareTo(x) == -1)
+        if (root.key.compareTo(x) < 0)
             root.setRightChild(delete(root.right, x));
-        else if (root.key.compareTo(x) == 1)
+        else if (root.key.compareTo(x) > 0)
             root.setLeftChild(delete(root.left, x));
         else {
 
@@ -132,7 +136,7 @@ public class binaryTree {
             return null;
         if (root.key.equals(key))
             return root;
-        if (root.key.compareTo(key) == -1)
+        if (root.key.compareTo(key) < 0)
             return SearchRecRoot(key, root.right);
         return SearchRecRoot(key, root.left);
     }
