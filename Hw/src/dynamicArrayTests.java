@@ -19,4 +19,14 @@ public class dynamicArrayTests extends Assertions{
         int actual = array.size();
         assertEquals(expected, actual);
     }
+    @Test
+    public void setint_actuallyset(){
+        dynamicArray array = new dynamicArray(10);
+        String expected = "idc";
+
+        array.set(0, expected);
+
+        Object actual = array.get(0);
+        assertEquals(expected, actual);
+    }
 }
