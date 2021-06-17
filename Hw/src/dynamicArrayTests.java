@@ -48,4 +48,19 @@ public class dynamicArrayTests extends Assertions{
         Object actual = array.get(0);
         assertEquals(expected, actual);
     }
+
+    @Test
+    public void remove_valueRemoved(){
+        dynamicArray array = new dynamicArray(10);
+        int expected = 4332;
+
+        for (int i=0; i < array.size();i++) {
+            array.set(i, expected);
+        }
+        array.set(4, "empty");
+        array.remove(4);
+
+        Object actual = array.get(4);
+        assertEquals(expected, actual);
+    }
 }
