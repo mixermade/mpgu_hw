@@ -84,4 +84,18 @@ public class dynamicArrayTests extends Assertions{
         Object actual = array.get(6);
         assertEquals(expected, actual);
     }
+    @Test
+    public void findLast_findsLast() {
+        dynamicArray array = new dynamicArray(10);
+        int expected = 5;
+
+        for (int i=0; i < array.size(); i++) {
+            array.set(i, "empty");
+        }
+
+        array.set(expected, 10);
+
+        int actual = array.findLast(10);
+        assertEquals(expected, actual);
+    }
 }
