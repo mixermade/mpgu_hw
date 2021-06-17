@@ -1,7 +1,6 @@
 public class dynamicArray<T> {
     public T[] array;
     public int starterSize = 0;
-    
     private T[] count;
 
     public dynamicArray(int size){
@@ -30,7 +29,6 @@ public class dynamicArray<T> {
         System.arraycopy(array, 0, newArray, 0, newLength);
         array = newArray;
     }
-}
     public void add(T value) {
         resize(array.length + 1);
         array[array.length - 1] = value;
