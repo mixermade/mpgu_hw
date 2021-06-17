@@ -5,5 +5,7 @@ public class dynamicArray<T> {
     public dynamicArray(){
         array = (T[])new Object[starterSize];
     }
-    
+    public T get(int count){
+        return array[count];
+    }
 }
