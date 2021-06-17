@@ -33,3 +33,16 @@ public class dynamicArray<T> {
     public void add(T value) {
         resize(array.length + 1);
         array[array.length - 1] = value;
+    }
+    public void insert(int index, T value) {
+        T[] newArray;
+        newArray = (T[]) new Object[array.length + 1];
+        for (int i = 0; i < index; i++) {
+            newArray[i] = get(i);
+        }
+        newArray[index] = value;
+        for (int i = index+1; i < newArray.length; i++) {
+            newArray[i] = get(i-1);
+        }
+        this.array = newArray;
+    }
