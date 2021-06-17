@@ -9,4 +9,14 @@ public class dynamicArrayTests extends Assertions{
         int actual = array.size();
         assertEquals(expected, actual);
     }
+    @Test
+    public void resize_actuallyResized() {
+        dynamicArray array = new dynamicArray(10);
+        int expected = 5;
+
+        array.resize(expected);
+
+        int actual = array.size();
+        assertEquals(expected, actual);
+    }
 }
