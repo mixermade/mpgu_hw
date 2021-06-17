@@ -29,4 +29,15 @@ public class dynamicArrayTests extends Assertions{
         Object actual = array.get(0);
         assertEquals(expected, actual);
     }
+    @Test
+    public void getSize_sizeCorrect(){
+        dynamicArray array2 = new dynamicArray(2);
+        int expected = 2;
+
+        int actual = array2.array.length;
+        assertEquals(expected, actual);
+    }
+        Object actual = array.get(0);
+        assertEquals(expected, actual);
+    }
 }
