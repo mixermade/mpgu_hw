@@ -30,3 +30,6 @@ public class dynamicArray<T> {
         array = newArray;
     }
 }
+    public void add(T value) {
+        resize(array.length + 1);
+        array[array.length - 1] = value;
