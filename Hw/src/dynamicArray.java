@@ -46,3 +46,20 @@ public class dynamicArray<T> {
         }
         this.array = newArray;
     }
+    public int findFirst(T value){
+        for(int i = 0; i < size(); i++){
+            if(array[i] == value){
+                return i;
+            }
+        }
+        return -1;
+    }
+
+    public int findLast(T value){
+        for(int i = size() - 1; i > -1; i--){
+            if(array[i] == value){
+                return i;
+            }
+        }
+        return -1;
+    }
