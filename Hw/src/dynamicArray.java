@@ -1,7 +1,7 @@
 public class dynamicArray<T> {
     public T[] array;
     public int starterSize = 0;
-    private int count;
+    
 
     public dynamicArray(int size){
         array = (T[])new Object[size];
