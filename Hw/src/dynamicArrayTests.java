@@ -37,6 +37,14 @@ public class dynamicArrayTests extends Assertions{
         int actual = array2.array.length;
         assertEquals(expected, actual);
     }
+
+    @Test
+    public void get_getsTheThing(){
+        dynamicArray array = new dynamicArray(10);
+        String expected ="idc";
+
+        array.set(0, expected);
+
         Object actual = array.get(0);
         assertEquals(expected, actual);
     }
