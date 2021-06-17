@@ -8,4 +8,7 @@ public class dynamicArray<T> {
     public T get(int count){
         return array[count];
     }
+    public void set(int count,T value){
+        array[count] = value;
+    }
 }
