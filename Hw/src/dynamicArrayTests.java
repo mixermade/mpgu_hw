@@ -73,4 +73,15 @@ public class dynamicArrayTests extends Assertions{
         Object actual = array.get(10);
         assertEquals(expected, actual);
     }
+    @Test
+    public void insert_int_value() {
+        dynamicArray array = new dynamicArray(10);
+        int expected = 22222;
+
+        array.set(5, expected);
+        array.insert(5, "something");
+
+        Object actual = array.get(6);
+        assertEquals(expected, actual);
+    }
 }
