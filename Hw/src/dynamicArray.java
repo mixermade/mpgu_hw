@@ -2,6 +2,7 @@ public class dynamicArray<T> {
     public T[] array;
     public int starterSize = 0;
     
+    private T[] count;
 
     public dynamicArray(int size){
         array = (T[])new Object[size];
@@ -63,3 +64,9 @@ public class dynamicArray<T> {
         }
         return -1;
     }
+    public void remove(int index){
+        array[index] = null;
+        if (size() - 1 - index >= 0) System.arraycopy(array, index + 1, array, index, size() - 1 - index);
+    }
+    }
+
