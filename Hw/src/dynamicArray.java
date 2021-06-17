@@ -11,4 +11,7 @@ public class dynamicArray<T> {
     public void set(int count,T value){
         array[count] = value;
     }
+    public int size(){
+        return array.length;
+    }
 }
