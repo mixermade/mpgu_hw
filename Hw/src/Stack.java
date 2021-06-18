@@ -12,3 +12,9 @@ public class Stack<T> {
         size--;
     }
 
+    public T peek() {
+        // returns the last item in the stack
+
+        return array.get(size-1);
+    }
+
