@@ -43,3 +43,23 @@ public class OffsetHashTable<K, V> {
     private final int hashCode (K key) {
         return Objects.hashCode(key);
     }
+
+    private int getIndex(K key) {
+        int hashCode = hashCode(key);
+        int index = hashCode % numBuckets;
+        // key.hashCode() coule be negative.
+        index = index < 0 ? index * -1 : index;
+        return index;
+    }
+
+    public V delete(K key) {
+        int bucketIndex = getIndex(key);
+        int hashCode = hashCode(key);
+
+        HashNode<K, V> head = array.get(bucketIndex);
+        HashNode<K, V> prev = null;
+
+        while (head != null) {
+            if (head.key.equals(key) && hashCode == head.hashCode)
+                break;
+
