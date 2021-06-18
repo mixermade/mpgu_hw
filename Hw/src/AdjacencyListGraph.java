@@ -16,3 +16,21 @@ import java.util.*;
             for (int i = 0; i < n; ++i) {
                 adj.add(new LinkedList<Integer>());
             }
+        }
+
+        public void addEdge(int i, int j) {
+            if (i > n || j > n) {
+                throwsOutOfBordersExc();
+            }
+            adj.get(i).add(j);
+            adj.get(j).add(i);
+        }
+
+        public void removeEdge(int i, int j) {
+            for (int k = 0; k < adj.get(i).size(); k++) {
+                if (adj.get(i).get(k) == j) {
+                    adj.get(i).remove(k);
+                    return;
+                }
+            }
+        }
