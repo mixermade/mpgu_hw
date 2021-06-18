@@ -3,3 +3,17 @@ import org.junit.jupiter.api.Assertions;
 
 
 public class EdgesListGraphTest extends Assertions {
+    @Test
+    public void addEdge_adds1NewEdges_newEdgeEqualsTrue() {
+        EdgesListGraph.Graph graph = new EdgesListGraph.Graph();
+
+        EdgesListGraph.Node v0 = new EdgesListGraph.Node(0);
+        EdgesListGraph.Node v1 = new EdgesListGraph.Node(1);
+
+        graph.AddVertex(v0);
+        graph.AddVertex(v1);
+
+        assertEquals(true, graph.AddEdge(v0, v1, 2));
+    }
+
+    @Test
