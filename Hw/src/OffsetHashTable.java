@@ -63,3 +63,23 @@ public class OffsetHashTable<K, V> {
             if (head.key.equals(key) && hashCode == head.hashCode)
                 break;
 
+            prev = head;
+            head = head.next;
+        }
+        if (head == null)
+            return null;
+        size--;
+
+        if (prev != null)
+            prev.next = head.next;
+        else
+            array.set(bucketIndex, head.next);
+        return head.value;
+    }
+
+    public V get(K key) {
+        int bucketIndex = getIndex(key);
+        int hashCode = hashCode(key);
+
+        HashNode<K, V> head = array.get(bucketIndex);
+
