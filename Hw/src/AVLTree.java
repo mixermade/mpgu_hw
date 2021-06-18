@@ -87,3 +87,19 @@ public class AVLTree {
         }
         return node;
     }
+
+    public void insert(String key) {
+        root = insertRec(root, key);
+    }
+
+    private AVLNode insertRec(AVLNode node, String key) {
+        if(node == null){return new AVLNode(key);}
+        else if (node.getKey().compareTo(key) > 0) {
+            node.setLeft(insertRec(node.getLeft(), key));
+        } else if (node.getKey().compareTo(key) < 0) {
+            node.setRight(insertRec(node.getRight(), key));
+        } else {
+            throw new RuntimeException("Duplicate Key!");
+        }
+        return rebalance(node);
+    }
