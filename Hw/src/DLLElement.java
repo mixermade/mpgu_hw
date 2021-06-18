@@ -1,11 +1,9 @@
-public class DLLElement <T> {
-    DLLElement <T> next;
-    DLLElement <T> prev;
-    T value;
+public class DLLElement<T> {
+    public DLLElement<T> next;
+    public DLLElement<T> prev;
+    public T data;
 
-    public DLLElement(DLLElement Prev, DLLElement Next, T Value) {
-        prev = Prev;
-        next = Next;
-        value = Value;
+    public DLLElement(T value) {
+        data = value;
     }
 }
