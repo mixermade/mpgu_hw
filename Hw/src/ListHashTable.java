@@ -22,7 +22,7 @@ public class ListHashTable {
         return true;
     }
 
-
+//
     private static int nextPrime(int n) {
         if (n % 2 == 0) {
             n++;
