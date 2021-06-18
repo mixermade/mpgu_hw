@@ -47,3 +47,4 @@ public class OffsetHashTableTest extends Assertions {
 
         assertEquals(false, table.isEmpty());
     }
+}
