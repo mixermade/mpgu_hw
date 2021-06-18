@@ -103,3 +103,14 @@ public class AVLTree {
         }
         return rebalance(node);
     }
+
+    private AVLNode rotateRight(AVLNode node) {
+        AVLNode nNode = node.getLeft();
+        AVLNode anotherNode = nNode.getRight();
+        nNode.setRight(node);
+        node.setLeft(anotherNode);
+        updateHeight(node);
+        updateHeight(nNode);
+        return nNode;
+    }
+
