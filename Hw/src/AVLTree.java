@@ -16,3 +16,15 @@ public class AVLTree {
             throw new RuntimeException("empty tree");
         return getMaxRec(root).getKey();
     }
+
+    private static AVLNode getMaxRec(AVLNode root) {
+        if (root.getRight() != null)
+            return getMaxRec(root.getRight());
+        return root;
+    }
+
+    private static AVLNode getMinRec(AVLNode root) {
+        if (root.getLeft() != null)
+            return getMinRec(root.getLeft());
+        return root;
+    }
