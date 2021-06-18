@@ -44,3 +44,17 @@ public class AVLTree {
             return searchRec(root.getRight(), key);
         return searchRec(root.getLeft(), key);
     }
+
+    public int height(){
+        if(root == null){return -1;}
+        else{return root.getHeight();}
+    }
+    private int height(AVLNode node){
+        if(node == null){return -1;}
+        else{return node.getHeight();}
+    }
+
+    private void updateHeight(AVLNode node){
+        node.setHeight(1 + Math.max(height(node.getLeft()), height(node.getRight())));
+    }
+
