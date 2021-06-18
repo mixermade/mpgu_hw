@@ -67,3 +67,23 @@ public class AVLTree {
         }
     }
 
+    private AVLNode rebalance(AVLNode node) {
+        updateHeight(node);
+        int balance = getBalance(node);
+        if (balance > 1) {
+            if (height(node.getRight().getRight()) > height(node.getRight().getLeft())) {
+                node = rotateLeft(node);
+            } else {
+                node.setRight(rotateRight(node.getRight()));
+                node = rotateLeft(node);
+            }
+        } else if (balance < -1) {
+            if (height(node.getLeft().getLeft()) > height(node.getLeft().getRight())) {
+                node = rotateRight(node);
+            } else {
+                node.setLeft(rotateLeft(node.getLeft()));
+                node = rotateRight(node);
+            }
+        }
+        return node;
+    }
