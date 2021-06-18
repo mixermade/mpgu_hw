@@ -86,4 +86,13 @@ public class QueueTests extends Assertions {
 
     @Test
     public void peek_dataCheck() {
+        Queue<Integer> queue = new Queue<Integer>();
+        int expected = 1;
+
+        queue.enqueue(1);
+        queue.enqueue(2);
+
+        int actual = queue.peek();
+        assertEquals(expected, actual);
+    }
 }
