@@ -23,3 +23,14 @@ public class AdjacencyMatrixGraph {
         adjMatrix[j][i] = true;
     }
 
+
+    public void removeEdge(int i, int j) {
+        adjMatrix[i][j] = false;
+        adjMatrix[j][i] = false;
+    }
+
+
+    public boolean hasEdge(int i, int j) {
+        return adjMatrix[i][j];
+    }
+}
