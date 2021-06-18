@@ -32,3 +32,10 @@ public class OffsetHashTableTest extends Assertions {
         assertEquals(3, table.size());
     }
 
+    @Test
+    public void isEmpty_noElements_equalsTrue() {
+        OffsetHashTable<Integer, Integer> table = new OffsetHashTable<>();
+
+        assertEquals(true, table.isEmpty());
+    }
+
