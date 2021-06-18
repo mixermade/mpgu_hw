@@ -20,4 +20,20 @@ public class QueueTests extends Assertions {
         assertEquals(expected, actual);
     }
 
+    @Test
+    public void enqueue_check_size() {
+        Queue<Integer> queue = new Queue<Integer>();
+        int expected = 1;
+
+        queue.enqueue(10);
+
+        int actual = queue.size();
+        assertEquals(expected, actual);
+
+        expected = 2;
+        queue.enqueue(20);
+        actual = queue.size();
+        assertEquals(expected, actual);
+    }
+
 }
