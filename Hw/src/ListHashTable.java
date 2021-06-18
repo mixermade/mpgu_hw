@@ -35,3 +35,21 @@ public class ListHashTable {
     public void insert(int elem) {
         arr[elem % capacity] = elem;
     }
+
+    public boolean search(int ele) {
+        return arr[ele % capacity] == ele;
+    }
+
+    public void delete(int ele) {
+        if (arr[ele % capacity] == ele) {
+            arr[ele % capacity] = 0;
+        } else {
+            System.out.println("Element not found");
+        }
+    }
+
+    public boolean get(int key) {
+        int index = key % capacity;
+        return arr[index] == key;
+    }
+}
