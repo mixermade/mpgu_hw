@@ -24,3 +24,18 @@ import java.util.LinkedList;
                 this.destVertex = dest;
                 this.weight = w;
             }
+
+            public Edge(Node dest) {
+                this.destVertex = dest;
+                this.weight = 1;
+            }
+
+            public int getWeight() {
+                return weight;
+            }
+
+            public Node getDestVertex() {
+                return destVertex;
+            }
+        }
+
