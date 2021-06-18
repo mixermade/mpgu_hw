@@ -15,6 +15,18 @@ public class DequeueTest extends Assertions {
     }
 
 
+    @Test
+    public void deck_addFront_sizeTest() {
+        Dequeue<Integer> deck = new Dequeue<Integer>();
+
+        deck.add_front(1);
+
+        int expected = 1;
+        int actual = deck.get_size();
+        Assertions.assertEquals(expected, actual);
+    }
+
+    @Test
     public void deck_peekFront_ValueTest() {
         Dequeue<Integer> deck = new Dequeue<Integer>();
 
