@@ -28,3 +28,19 @@ public class AVLTree {
             return getMinRec(root.getLeft());
         return root;
     }
+
+    public AVLNode search(String key) {
+        if (root == null)
+            return null;
+        return searchRec(root, key);
+    }
+
+    private static AVLNode searchRec(AVLNode root, String key) {
+        if (root == null)
+            return null;
+        if (root.getKey().equals(key))
+            return root;
+        if (root.getKey().compareTo(key) < 0)
+            return searchRec(root.getRight(), key);
+        return searchRec(root.getLeft(), key);
+    }
