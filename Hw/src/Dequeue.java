@@ -21,7 +21,7 @@ public class Dequeue<T> {
 
     public void pop_back() {
         if (list.size-1 < 0) {
-            // exceptions preventer
+            
 
             return;
         }
@@ -33,7 +33,7 @@ public class Dequeue<T> {
     public T peek_front() {
 
         if (list.size-1 < 0) {
-            // to prevent exceptions
+
 
             return null;
         }
@@ -44,7 +44,7 @@ public class Dequeue<T> {
     public T peek_back() {
 
         if (list.size-1 < 0) {
-            // to prevent exceptions
+
 
             return null;
         }
