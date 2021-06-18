@@ -49,6 +49,25 @@ public class DequeueTest extends Assertions {
     }
 
     @Test
+    public void deck_addBack_ValueTest() {
+        Dequeue<Integer> deck = new Dequeue<Integer>();
+        deck.add_back(1);
+
+        int expected = 1;
+        int actual = deck.peek_back();
+        Assertions.assertEquals(expected, actual);
+    }
+
+    @Test
+    public void deck_peekBack_ValueTest() {
+        Dequeue<Integer> deck = new Dequeue<Integer>();
+        deck.add_back(1);
+
+        int expected = 1;
+        int actual = deck.peek_back();
+        Assertions.assertEquals(expected, actual);
+    }
+
     @Test
     public void deck_peekFront_ValueTest() {
         Dequeue<Integer> deck = new Dequeue<Integer>();
