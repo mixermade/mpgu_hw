@@ -17,6 +17,16 @@ public class DLL<T>{
             currFirst.prev = newDLLElement;
     }
 
+    public void addLast(T Value) {
+        final DLLElement currLast = last;
+        final DLLElement newDLLElement = new DLLElement(currLast, null, Value);
+        last = newDLLElement;
+        if(currLast == null)
+            first = newDLLElement;
+        else
+            currLast.next = newDLLElement;
+    }
+
     public T getLast() {
         if(last == null){return null;}
         return last.value;
