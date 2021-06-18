@@ -1,6 +1,6 @@
 public class DLL<T>{
-    private DLLElement<T> first;
-    private DLLElement<T> last;
+    public DLLElement<T> first;
+    public DLLElement<T> last;
 //
     public DLL() {
         first =  null;
