@@ -7,3 +7,8 @@ public class Stack<T> {
         size++;
     }
 
+    public void pop() {
+        array.resize(size-1);
+        size--;
+    }
+
