@@ -16,3 +16,17 @@ public class Dequeue<T> {
             return;
         }
 
+        list.removeNode(list.size - 1);
+    }
+
+    public void pop_back() {
+        if (list.size-1 < 0) {
+            // exceptions preventer
+
+            return;
+        }
+
+        list.removeNode(0);
+    }
+
+
