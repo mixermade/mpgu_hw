@@ -127,3 +127,28 @@ public class AVLTree {
     public void delete(String key) {
         root = deleteRec(root, key);
     }
+
+    private AVLNode deleteRec(AVLNode node, String key) {
+        if(node == null){ return node;}
+        else if (node.getKey().compareTo(key) > 0) {
+            node.setLeft(deleteRec(node.getLeft(), key));
+        } else if (node.getKey().compareTo(key) < 0) {
+            node.setRight(deleteRec(node.getRight(), key));
+        }
+        else {
+            if (node.getLeft() == null || node.getRight() == null) {
+                if(node.getLeft() == null){node = node.getRight();}
+                else{node = node.getLeft();}
+            }
+            else {
+                AVLNode mostLeftChild = getMinRec(node.getRight());
+                node.setKey(mostLeftChild.getKey());
+                node.setRight(deleteRec(node.getRight(), node.getKey()));
+            }
+        }
+        if (node != null) {
+            node = rebalance(node);
+        }
+        return node;
+    }
+}
