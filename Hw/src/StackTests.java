@@ -8,6 +8,17 @@ public class StackTests {
     }
 
     @Test
+    public void getsize_test() {
+        Stack<Integer> stack = new Stack<Integer>();
+        int expected = 0;
+
+        int actualValue = stack.getSize();
+        assertEquals(expected, actualValue);
+
+        stack.push(1);
+        expected = 1;
+        actualValue = stack.getSize();
+        assertEquals(expected, actualValue);
     }
 
     @Test
