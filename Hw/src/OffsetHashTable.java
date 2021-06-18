@@ -24,3 +24,22 @@ public class OffsetHashTable<K, V> {
     private int numBuckets;
 
 
+    private int size;
+
+    public OffsetHashTable() {
+        array = new ArrayList<>();
+        numBuckets = 10;
+        size = 0;
+
+
+        for (int i = 0; i < numBuckets; i++)
+            array.add(null);
+    }
+
+    public int size() { return size; }
+
+    public boolean isEmpty() { return size() == 0; }
+
+    private final int hashCode (K key) {
+        return Objects.hashCode(key);
+    }
