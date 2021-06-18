@@ -51,4 +51,25 @@ public class QueueTests extends Assertions {
         expected = 20;
         actual = queue.peek();
         assertEquals(expected, actual);
+    }
+
+    @Test
+    public void dequeue_check_size() {
+        Queue<Integer> queue = new Queue<Integer>();
+        int expected = 1;
+
+        queue.enqueue(3);
+        queue.enqueue(3);
+
+        queue.dequeue();
+
+        int actual = queue.size();
+        assertEquals(expected, actual);
+
+        expected = 0;
+        queue.dequeue();
+        actual = queue.size();
+        assertEquals(expected, actual);
+    }
+
 }
