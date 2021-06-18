@@ -8,3 +8,11 @@ public class Dequeue<T> {
     public void add_back(T value) {
         list.push(value);
     }
+
+    public void pop_front() {
+        if (list.size-1 < 0) {
+
+
+            return;
+        }
+
