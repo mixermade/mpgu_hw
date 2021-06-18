@@ -46,3 +46,14 @@ public class Dequeue<T> {
         if (list.size-1 < 0) {
             // to prevent exceptions
 
+            return null;
+        }
+
+        return list.getValueByIndex(0);
+    }
+
+    public int get_size() {
+        return list.size;
+    }
+}
+
