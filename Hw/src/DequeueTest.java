@@ -5,6 +5,16 @@ import static org.junit.Assert.assertEquals;
 
 public class DequeueTest extends Assertions {
 
+    @Test
+    public void deck_init_sizeTest() {
+        Dequeue<Integer> deck = new Dequeue<Integer>();
+
+        int expected = 0;
+        int actual = deck.get_size();
+        Assertions.assertEquals(expected, actual);
+    }
+
+
     public void deck_peekFront_ValueTest() {
         Dequeue<Integer> deck = new Dequeue<Integer>();
 
