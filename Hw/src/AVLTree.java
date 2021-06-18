@@ -114,3 +114,16 @@ public class AVLTree {
         return nNode;
     }
 
+    private AVLNode rotateLeft(AVLNode node) {
+        AVLNode nNode = node.getRight();
+        AVLNode anotherNode = nNode.getLeft();
+        nNode.setLeft(node);
+        node.setRight(anotherNode);
+        updateHeight(node);
+        updateHeight(nNode);
+        return nNode;
+    }
+
+    public void delete(String key) {
+        root = deleteRec(root, key);
+    }
