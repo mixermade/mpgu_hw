@@ -18,3 +18,11 @@ public class Stack<T> {
         return array.get(size-1);
     }
 
+    public int getSize() {
+        return size;
+    }
+
+    public boolean isEmpty() {
+        return size == 0;
+    }
+}
