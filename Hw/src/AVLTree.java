@@ -58,3 +58,12 @@ public class AVLTree {
         node.setHeight(1 + Math.max(height(node.getLeft()), height(node.getRight())));
     }
 
+    public int getBalance(AVLNode node) {
+        if (node == null) {
+            return 0;
+        }
+        else {
+            return height(node.getRight()) - height(node.getLeft());
+        }
+    }
+
