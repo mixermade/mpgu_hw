@@ -36,4 +36,19 @@ public class QueueTests extends Assertions {
         assertEquals(expected, actual);
     }
 
+    @Test
+    public void dequeue_check_data() {
+        Queue<Integer> queue = new Queue<Integer>();
+        int expected = 20;
+
+        queue.enqueue(10);
+        queue.enqueue(20);
+        queue.dequeue();
+
+        int actual = queue.peek();
+        assertEquals(expected, actual);
+
+        expected = 20;
+        actual = queue.peek();
+        assertEquals(expected, actual);
 }
